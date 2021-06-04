@@ -29,7 +29,6 @@
 //Array
 let itemsList = ['T-Shirt','Sweater'];
 let req = prompt('Welcome to our shop, what do you want (C, R, U, D)');
-let 
 if(req == 'R')
 {
     console.log('Our items: T-Shirt, Sweater');
