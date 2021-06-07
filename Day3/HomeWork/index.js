@@ -123,50 +123,107 @@
 //     }
 // }
 
-// Câu 5
-// Calculate the sum of the numbers after split
-let numberList;
-let sum = 0;
-while(true)
-{
-    numberList = prompt('Enter a squence of number, separated by commas (,)');
-    if (numberList == undefined)
-    {
-        alert('Bye');
-    }
-    else
-    {
-        break;
-    }
-}
-arrNumberList = numberList.split(",");
-alert(`Squence of number you entered is ${arrNumberList}`);
-for (let i = 0; i < arrNumberList.length; i++)
-{
-    sum += Number(arrNumberList[i]);
-}
-alert(`The sum of them is ${sum}`);
+// // Câu 5
+// // Calculate the sum of the numbers after split
+// let numberList;
+// let sum = 0;
+// while(true)
+// {
+//     numberList = prompt('Enter a squence of number, separated by commas (,)');
+//     if (numberList == undefined)
+//     {
+//         alert('Bye');
+//     }
+//     else
+//     {
+//         break;
+//     }
+// }
+// arrNumberList = numberList.split(",");
+// alert(`Squence of number you entered is ${arrNumberList}`);
+// for (let i = 0; i < arrNumberList.length; i++)
+// {
+//     sum += Number(arrNumberList[i]);
+// }
+// alert(`The sum of them is ${sum}`);
 
-// Câu 6
-// Find the smallest numbers after split
-numberList = prompt('Enter a squence of number, separated by commas (,)');
-arrNumberList = numberList.split(",");
-alert(`Squence of number you entered is ${arrNumberList}`);
-for(let i = 0; i < arrNumberList.length; i++)
+// // Câu 6
+// // Find the smallest numbers after split
+// numberList = prompt('Enter a squence of number, separated by commas (,)');
+// arrNumberList = numberList.split(",");
+// alert(`Squence of number you entered is ${arrNumberList}`);
+// for(let i = 0; i < arrNumberList.length; i++)
+// {
+//     for(let j = i + 1; j < arrNumberList.length; j++)
+//     {
+//         let a = arrNumberList[i];
+//         let b = arrNumberList[j];
+//         if (a > b)
+//         {
+//             arrNumberList[i] = b;
+//             arrNumberList[j] = a;
+//         }
+//         else
+//         {
+//             arrNumberList[i] = a;
+//         }
+//     }
+// }
+// alert(`The smallest number is ${arrNumberList[0]}`);
+
+// // Câu 7
+// const arr = [3, 4, 6, -9, 10, -88, 2];
+// let flg;
+// let numberReq = Number(prompt("Enter a number"));
+// for(let i = 0; i < arr.length; i++)
+// {
+//     if(numberReq == arr[i])
+//     {
+//         alert(`${numberReq} is found in my array at index ${i}`);
+//         flg = true;
+//     }else
+//     {
+//         flg = false;
+//     }
+// }
+// if (flg == false)
+// {
+//     alert(`${numberReq} is NOT found in my array`);
+// }
+
+// Câu 8
+// Init array sheep size
+let arraySheepSize = [5, 7, 300, 90, 24, 50, 75];
+console.log('Hello, here is my sheep sizes:\n');
+console.log(...arraySheepSize);
+// print out max of sheep size
+console.log('Now my biggest sheep has size ' + Math.max(...arraySheepSize));
+// Size afrer shearing
+console.log('After shearing, here is my flock\n');
+arraySheepSize[arraySheepSize.indexOf(Math.max(...arraySheepSize))] = 8;
+console.log(...arraySheepSize);
+// Size after increased by 50
+let i;
+let j;
+// Size after 3 month
+for (i = 0; i < 3; i++)
 {
-    for(let j = i + 1; j < arrNumberList.length; j++)
+    console.log(`Month ${i + 1}`);
+    for (j = 0; j < arraySheepSize.length; j++)
     {
-        let a = arrNumberList[i];
-        let b = arrNumberList[j];
-        if (a > b)
-        {
-            arrNumberList[i] = b;
-            arrNumberList[j] = a;
-        }
-        else
-        {
-            arrNumberList[i] = a;
-        }
+        arraySheepSize[j] += 50;
     }
+    console.log('One month has, passed, my sheeps have grown, here are their sizes');
+    console.log(...arraySheepSize);
+    console.log('Now my biggest sheep has size ' + Math.max(...arraySheepSize) + ', let is shave it');
+    console.log('After shearing, here is my flock\n');
+    arraySheepSize[arraySheepSize.indexOf(Math.max(...arraySheepSize))] = 8;
+    console.log(...arraySheepSize); 
 }
-alert(`The smallest number is ${arrNumberList[0]}`);
+sum = 0;
+for(let i = 0; i < arraySheepSize.length; i++) 
+{
+    sum += arraySheepSize[i];
+}
+console.log(`Total size: ${sum}`);
+console.log("I would get " + sum*2);
