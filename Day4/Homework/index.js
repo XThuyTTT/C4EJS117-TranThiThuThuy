@@ -92,47 +92,47 @@
 // }
 
 // // Cau 5
-// // 5.1
-// let products = [
-//     {
-//         name: 'Xiaomi portable charger 20000mah',
-//         brand: 'Xiaomi',
-//         price: 428,
-//         color: 'White',
-//         category: 'Charger',
-//         providers: 'Phukienzero Dientuccc',
-//     },
-//     {
-//         name: 'VSmart Active 1',
-//         brand: 'VSmart',
-//         price: 5487,
-//         color: 'Black',
-//         category: 'Phone',
-//         providers: 'Tgdd Ddghn VhStore',
-//     },
-//     {
-//         name: 'IPhone X',
-//         brand: 'Apple',
-//         price: 21490,
-//         color: 'Gray',
-//         category: 'Phone',
-//         providers: 'Tgdd',
-//     },
-//     {
-//         name: 'Samsung Galaxy A9',
-//         brand: 'Samsung',
-//         price: 8490,
-//         color: 'Blue',
-//         category: 'Phone',
-//         providers: 'Tgdd',
-//     },
-// ];
+// 5.1
+let products = [
+    {
+        name: 'Xiaomi portable charger 20000mah',
+        brand: 'Xiaomi',
+        price: 428,
+        color: 'White',
+        category: 'Charger',
+        providers: 'Phukienzero Dientuccc',
+    },
+    {
+        name: 'VSmart Active 1',
+        brand: 'VSmart',
+        price: 5487,
+        color: 'Black',
+        category: 'Phone',
+        providers: 'Tgdd Ddghn VhStore',
+    },
+    {
+        name: 'IPhone X',
+        brand: 'Apple',
+        price: 21490,
+        color: 'Gray',
+        category: 'Phone',
+        providers: 'Tgdd',
+    },
+    {
+        name: 'Samsung Galaxy A9',
+        brand: 'Samsung',
+        price: 8490,
+        color: 'Blue',
+        category: 'Phone',
+        providers: 'Tgdd',
+    },
+];
 
-// for (let i = 0; i < products.length; i++) {
-//     console.log('---------------------------------------');
-//     console.log(`${i + 1}.` + ' Name: ' + products[i].name);
-//     console.log('Price: ' + products[i].price);
-// }
+for (let i = 0; i < products.length; i++) {
+    console.log('---------------------------------------');
+    console.log(`${i + 1}.` + ' Name: ' + products[i].name);
+    console.log('Price: ' + products[i].price);
+}
 // //5.2
 // let reqReadPos;
 // while (true) {
@@ -174,86 +174,106 @@
 //     console.log('Providers: ' + items.providers);
 // }
 
-// Cau 6
-// 6.1
-let front_end = [
-    {
-        name: 'HTML',
-        complete: 'false',
-    },
-    {
-        name: 'CSS',
-        complete: 'false',
-    },
-    {
-        name: 'Basic of JavaScript',
-        complete: 'false',
-    },
-    {
-        name: 'Node Package Manager (npm)',
-        complete: 'false',
-    },
-    {
-        name: 'Git',
-        complete: 'false',
-    },
-];
-console.log('Hi there, this is your learning tasks to front-end developer career:');
-for (let items in front_end) {
-    console.log((Number(items) + 1) + ". " + front_end[items].name);
-    console.log('Complete: ' + front_end[items].complete);
-}
-console.log('-----------------------------------------------------------------------');
-// 6.2~6.5
-let Req;
-let init;
-while (true) {
-    Req = prompt('Enter your command (New, Delete, Update, Complete)').toLowerCase();
-    if (Req == 'new') {
-        init = prompt('Enter new task:');
-        let ob = new Object();
-        ob['name'] = init;
-        ob['complete'] = 'false';
-        front_end.push(ob);
-        for (let items in front_end) {
-            console.log((Number(items) + 1) + '. ' + front_end[items].name);
-            console.log('Complete: ' + front_end[items].complete);
-        }
-        console.log('-----------------------------------------------------------------------');
-        break;
-    }
-    else if (Req == 'update') {
-        init = prompt('Enter position:');
-        let yourTitle = prompt('Enter new title');
-        front_end[init - 1].name = yourTitle;
-        for (let items in front_end) {
-            console.log((Number(items) + 1) + '. ' + front_end[items].name);
-            console.log('Complete: ' + front_end[items].complete);
-        }
-        console.log('-----------------------------------------------------------------------');
-        break;
-    }
-    else if (Req == 'complete') {
-        init = prompt('Enter position:');
-        front_end[init - 1].complete = 'true';
-        for (let items in front_end) {
-            console.log((Number(items) + 1) + '. ' + front_end[items].name);
-            console.log('Complete: ' + front_end[items].complete);
-        }
-        console.log('-----------------------------------------------------------------------');
-        break;
-    }
-    else if (Req == 'delete') {
-        init = init = prompt('Enter position:');
-        delete front_end[init - 1];
-        for (let items in front_end) {
-            console.log((Number(items) + 1) + '. ' + front_end[items].name);
-            console.log('Complete: ' + front_end[items].complete);
-        }
-        console.log('-----------------------------------------------------------------------');
-        break;
-    }
-    else {
-        alert('Please enter your command (New, Delete, Update, Complete)');
+// 5.5
+let reqSearchPro = prompt('Enter provider');
+let searchCount = 0;
+for (let items in products) {
+    if (products[items].providers == reqSearchPro) {
+        searchCount++;
+        console.log('-------------------------------------------------');
+        console.log('Name: ' + products[items].name);
+        console.log('Brand: ' + products[items].brand);
+        console.log('Price: ' + products[items].price);
+        console.log('Color: ' + products[items].color);
+        console.log('Category: ' + products[items].category);
+        console.log('Providers: ' + products[items].providers)
     }
 }
+if (searchCount == 0)
+{
+    alert('Providers not found');
+}
+
+// // Cau 6
+// // 6.1
+// let front_end = [
+//     {
+//         name: 'HTML',
+//         complete: 'false',
+//     },
+//     {
+//         name: 'CSS',
+//         complete: 'false',
+//     },
+//     {
+//         name: 'Basic of JavaScript',
+//         complete: 'false',
+//     },
+//     {
+//         name: 'Node Package Manager (npm)',
+//         complete: 'false',
+//     },
+//     {
+//         name: 'Git',
+//         complete: 'false',
+//     },
+// ];
+// console.log('Hi there, this is your learning tasks to front-end developer career:');
+// for (let items in front_end) {
+//     console.log((Number(items) + 1) + ". " + front_end[items].name);
+//     console.log('Complete: ' + front_end[items].complete);
+// }
+// console.log('-----------------------------------------------------------------------');
+// // 6.2~6.5
+// let Req;
+// let init;
+// while (true) {
+//     Req = prompt('Enter your command (New, Delete, Update, Complete)').toLowerCase();
+//     if (Req == 'new') {
+//         init = prompt('Enter new task:');
+//         let ob = new Object();
+//         ob['name'] = init;
+//         ob['complete'] = 'false';
+//         front_end.push(ob);
+//         for (let items in front_end) {
+//             console.log((Number(items) + 1) + '. ' + front_end[items].name);
+//             console.log('Complete: ' + front_end[items].complete);
+//         }
+//         console.log('-----------------------------------------------------------------------');
+//         break;
+//     }
+//     else if (Req == 'update') {
+//         init = prompt('Enter position:');
+//         let yourTitle = prompt('Enter new title');
+//         front_end[init - 1].name = yourTitle;
+//         for (let items in front_end) {
+//             console.log((Number(items) + 1) + '. ' + front_end[items].name);
+//             console.log('Complete: ' + front_end[items].complete);
+//         }
+//         console.log('-----------------------------------------------------------------------');
+//         break;
+//     }
+//     else if (Req == 'complete') {
+//         init = prompt('Enter position:');
+//         front_end[init - 1].complete = 'true';
+//         for (let items in front_end) {
+//             console.log((Number(items) + 1) + '. ' + front_end[items].name);
+//             console.log('Complete: ' + front_end[items].complete);
+//         }
+//         console.log('-----------------------------------------------------------------------');
+//         break;
+//     }
+//     else if (Req == 'delete') {
+//         init = init = prompt('Enter position:');
+//         delete front_end[init - 1];
+//         for (let items in front_end) {
+//             console.log((Number(items) + 1) + '. ' + front_end[items].name);
+//             console.log('Complete: ' + front_end[items].complete);
+//         }
+//         console.log('-----------------------------------------------------------------------');
+//         break;
+//     }
+//     else {
+//         alert('Please enter your command (New, Delete, Update, Complete)');
+//     }
+// }
