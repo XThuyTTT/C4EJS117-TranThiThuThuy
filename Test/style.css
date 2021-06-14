@@ -1,0 +1,19 @@
+.demo-css {
+    color: red;
+    text-decoration: underline;
+}
+#only {
+    color: blue;
+    text-decoration: underline;
+}
+#box-demo {
+    background-color: chartreuse;
+    display: flex;
+}
+
+.flex-items {
+    background-color: chocolate;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
